@@ -2,7 +2,7 @@
   "name": "split-engine",
   "version": "1.0.0",
   "homepage": "https://github.com/xWinuX/SplitEngine",
-  "supports": "x64 & windows & static",
+  "supports": "x64 & windows",
   "dependencies": [
     {
       "name": "glm",
