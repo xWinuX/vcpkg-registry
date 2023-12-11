@@ -1,8 +1,8 @@
 vcpkg_from_github(
         OUT_SOURCE_PATH SOURCE_PATH
-        REPO xWinuX/SplitEngine # Please replace with actual value
-        REF 3b3d70137d36fcd6268dbfd8d398417ac74eacaf # replace with actual value
-        SHA512 0 # replace with actual value
+        REPO xWinuX/SplitEngine
+        REF 3b3d70137d36fcd6268dbfd8d398417ac74eacaf
+        SHA512 785fe8220d7c6593b688c8d7bdc4fa8b74427e63122db32494e2fc9e06db20bf13cf19c092fb861d0e1784f2fed010335f2fb32dda4e511a50f4264c3507575e
         HEAD_REF dev
 )
 
