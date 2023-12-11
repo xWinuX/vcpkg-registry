@@ -16,13 +16,8 @@
       "version>=": "1.89.9"
     },
     {
-      "$comment": "    find_package(SDL2 CONFIG REQUIRED)\n\n    target_link_libraries(main\n\n        PRIVATE\n\n        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>\n\n        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>\n\n    )\n",
-      "name": "sdl2",
-      "features": [
-        "base",
-        "vulkan"
-      ],
-      "version>=": "2.28.2"
+      "name" : "sdl2",
+      "version>=" : "2.28.2"
     },
     {
       "name": "spirv-cross",
