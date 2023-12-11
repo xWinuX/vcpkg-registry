@@ -1,33 +1,48 @@
 {
-  "name" : "split-engine",
-  "version" : "0.0.1",
+  "name": "split-engine",
+  "version": "1.0.0",
   "homepage": "https://github.com/xWinuX/SplitEngine",
-  "dependencies" : [ {
-    "name" : "sdl2",
-    "version>=" : "2.28.2",
-    "$comment" : "    find_package(SDL2 CONFIG REQUIRED)\n\n    target_link_libraries(main\n\n        PRIVATE\n\n        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>\n\n        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>\n\n    )\n",
-    "features" : [ "base", "vulkan" ]
-  }, {
-    "name" : "vulkan-headers",
-    "version>=" : "1.3.260"
-  }, {
-    "name" : "vulkan",
-    "version>=" : "1.1.82.1#6"
-  }, {
-    "name" : "glm",
-    "version>=" : "2023-06-08"
-  }, {
-    "name" : "imgui",
-    "version>=" : "1.89.9",
-    "features" : [ "sdl2-binding", "vulkan-binding" ]
-  }, {
-    "name" : "stb",
-    "version>=" : "2023-04-11#1"
-  }, {
-    "name" : "vulkan-memory-allocator",
-    "version>=" : "3.0.1#3"
-  }, {
-    "name" : "spirv-cross",
-    "version>=" : "2021-01-15#2"
-  } ]
+  "dependencies": [
+    {
+      "name": "glm",
+      "version>=": "2023-06-08"
+    },
+    {
+      "name": "imgui",
+      "features": [
+        "sdl2-binding",
+        "vulkan-binding"
+      ],
+      "version>=": "1.89.9"
+    },
+    {
+      "$comment": "    find_package(SDL2 CONFIG REQUIRED)\n\n    target_link_libraries(main\n\n        PRIVATE\n\n        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>\n\n        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>\n\n    )\n",
+      "name": "sdl2",
+      "features": [
+        "base",
+        "vulkan"
+      ],
+      "version>=": "2.28.2"
+    },
+    {
+      "name": "spirv-cross",
+      "version>=": "2021-01-15#2"
+    },
+    {
+      "name": "stb",
+      "version>=": "2023-04-11#1"
+    },
+    {
+      "name": "vulkan",
+      "version>=": "1.1.82.1#6"
+    },
+    {
+      "name": "vulkan-headers",
+      "version>=": "1.3.260"
+    },
+    {
+      "name": "vulkan-memory-allocator",
+      "version>=": "3.0.1#3"
+    }
+  ]
 }
