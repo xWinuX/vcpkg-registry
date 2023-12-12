@@ -11,7 +11,7 @@ vcpkg_configure_cmake(
         "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/lib"
 )
 
-vcpkg_cmake_install()
+vcpkg_install_cmake()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
