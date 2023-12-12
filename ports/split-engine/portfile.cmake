@@ -19,6 +19,23 @@ vcpkg_fixup_cmake_targets()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
+vcpkg_find_acquire_program(SPIRV-CROSS)
+vcpkg_find_acquire_program(VULKAN-HEADERS)
+vcpkg_find_acquire_program(VULKAN-MEMORY-ALLOCATOR)
+
+vcpkg_copy_tools(
+        TARGET_FILES ${SOURCE_PATH}/tool_files
+        TOOL_NAMES spirv-cross-core spirv-cross-glsl spirv-cross-cpp spirv-cross-reflect spirv-cross-util
+        AUTO_CLEAN
+)
+
+vcpkg_copy_tools(TOOL_NAMES Vulkan Vulkan::Headers GPUOpen::VulkanMemoryAllocator)
+vcpkg_copy_tools(TOOL_NAMES imgui::imgui)
+vcpkg_copy_tools(TOOL_NAMES glm::glm)
+vcpkg_copy_tools(TOOL_NAMES SDL2::SDL2main)
+vcpkg_copy_tools(TOOL_NAMES SDL2::SDL2-static)
+vcpkg_copy_tools(TOOL_NAMES Stb)
+
 file(
         INSTALL "${SOURCE_PATH}/LICENSE"
         DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
