@@ -8,6 +8,7 @@ vcpkg_from_github(
 
 vcpkg_configure_cmake(
         SOURCE_PATH ${SOURCE_PATH}
+        "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/lib"
 )
 
 vcpkg_build_cmake(TARGET SplitEngine)
