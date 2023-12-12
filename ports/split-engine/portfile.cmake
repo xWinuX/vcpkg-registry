@@ -1,7 +1,9 @@
-vcpkg_from_git(
+vcpkg_from_github(
         OUT_SOURCE_PATH SOURCE_PATH
-        URL git@github.com:xWinuX/SplitEngine.git
+        REPO xWinuX/SplitEngine
         REF edba43d5e1848f7fbe78eeef57acc747e5c2605f
+        SHA512 0
+        HEAD_REF dev
 )
 
 vcpkg_configure_cmake(
