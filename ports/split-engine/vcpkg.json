@@ -18,6 +18,7 @@
     {
       "name": "sdl2",
       "features": [
+        "base",
         "vulkan"
       ],
       "version>=": "2.28.2"
