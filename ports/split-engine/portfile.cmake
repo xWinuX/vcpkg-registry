@@ -23,7 +23,7 @@ file(
         DESTINATION "${CURRENT_PACKAGES_DIR}/include")
 
 file(
-        INSTALL "${SOURCE_PATH}/bin/Release/SplitEngine.lib"
+        INSTALL "${SOURCE_PATH}/${TARGET_TRIPLET}/Release/SplitEngine.lib"
         DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
 
 file(
