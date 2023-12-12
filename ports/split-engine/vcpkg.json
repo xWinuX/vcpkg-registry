@@ -13,7 +13,7 @@
         "sdl2-binding",
         "vulkan-binding"
       ],
-      "version>=": "1.89.9"
+      "version>=": "1.90"
     },
     {
       "name": "sdl2",
