@@ -10,14 +10,13 @@ vcpkg_from_github(
 
 vcpkg_configure_cmake(
         SOURCE_PATH ${SOURCE_PATH}
-        "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/lib"
 )
 
 vcpkg_cmake_install()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
-vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/split-engine)
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/SplitEngine)
 
 vcpkg_copy_pdbs()
 
