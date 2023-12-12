@@ -14,12 +14,13 @@ vcpkg_build_cmake(TARGET SplitEngine)
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
-install(
-        TARGETS SplitEngine
-        LIBRARY DESTINATION lib
-        INCLUDES DESTINATION include
-        PUBLIC_HEADER DESTINATION include
-)
+file(
+        INSTALL "${SOURCE_PATH}/include/SplitEngine"
+        DESTINATION "${CURRENT_PACKAGES_DIR}/include")
+
+file(
+        INSTALL "${SOURCE_PATH}/${TARGET_TRIPLET}/${CMAKE_BUILD_TYPE}/SplitEngine.lib"
+        DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
 
 file(
         INSTALL "${SOURCE_PATH}/LICENSE.md"
