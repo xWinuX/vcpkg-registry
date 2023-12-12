@@ -10,7 +10,7 @@ vcpkg_configure_cmake(
         SOURCE_PATH ${SOURCE_PATH}
 )
 
-vcpkg_install_cmake()
+vcpkg_build_cmake(TARGET SplitEngine)
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
