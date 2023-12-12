@@ -17,7 +17,7 @@ vcpkg_cmake_install()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
-vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/SplitEngine)
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/split-engine)
 
 vcpkg_copy_pdbs()
 
