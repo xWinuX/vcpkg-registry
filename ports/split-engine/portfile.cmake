@@ -1,7 +1,7 @@
 vcpkg_from_github(
         OUT_SOURCE_PATH SOURCE_PATH
         REPO xWinuX/SplitEngine
-        REF 8eeeb50ae5814499f9595bf3522d5f19af10b349
+        REF 9cf95d789499647134e2c0253472bf588aba210c
         SHA512 d6279f94a63340977ac0ad6ff7509df31eb37dfcfb5058ebf8353397df60b5b6af9b2ff6b2ae1e6cd4ea5a6f1205c102666b7bdc32766def375b4b51f25e0890
         HEAD_REF dev
 )
