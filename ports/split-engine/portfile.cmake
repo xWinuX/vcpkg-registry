@@ -16,15 +16,15 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
             LOGNAME clone
     )
     message(STATUS "Cloning done")
-
-    message(STATUS "Checkout revision ${GIT_REV}")
-    vcpkg_execute_required_process(
-            COMMAND ${GIT} checkout ${GIT_REV}
-            WORKING_DIRECTORY ${SOURCE_PATH}
-            LOGNAME checkout
-    )
-    message(STATUS "Checkout revision done")
 endif ()
+
+message(STATUS "Checkout revision ${GIT_REV}")
+vcpkg_execute_required_process(
+        COMMAND ${GIT} checkout ${GIT_REV}
+        WORKING_DIRECTORY ${SOURCE_PATH}
+        LOGNAME checkout
+)
+message(STATUS "Checkout revision done")
 
 vcpkg_configure_cmake(
         SOURCE_PATH ${SOURCE_PATH}
