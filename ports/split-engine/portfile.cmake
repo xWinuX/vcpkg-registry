@@ -6,6 +6,7 @@ find_program(GIT git)
 set(GIT_URL "https://github.com/xWinuX/SplitEngine.git")
 set(GIT_REV "ab2a2ed7eb077ab8a7db429e1bc0d974ef038a2f")
 
+set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/${PORT})
 
 if(NOT EXISTS "${SOURCE_PATH}/.git")
     message(STATUS "Cloning and fetching submodules")
@@ -14,18 +15,14 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
             WORKING_DIRECTORY ${SOURCE_PATH}
             LOGNAME clone
     )
-endif()
-message(STATUS "Cloning done")
 
-if (NOT EXISTS "${CURRENT_BUILDTREES_DIR}/src/.git")
-    message(STATUS "Adding worktree")
+    message(STATUS "Checkout revision ${GIT_REV}")
     vcpkg_execute_required_process(
-            COMMAND ${GIT} worktree add -f --detach ${CURRENT_BUILDTREES_DIR}/src ${GIT_REV}
-            WORKING_DIRECTORY ${DOWNLOADS}/SplitEngine.git
-            LOGNAME worktree
+            COMMAND ${GIT} checkout ${GIT_REV}
+            WORKING_DIRECTORY ${SOURCE_PATH}
+            LOGNAME checkout
     )
-endif ()
-message(STATUS "Adding worktree done")
+endif()
 
 vcpkg_configure_cmake(
         SOURCE_PATH ${SOURCE_PATH}
