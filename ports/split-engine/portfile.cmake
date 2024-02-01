@@ -18,6 +18,22 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
     message(STATUS "Cloning done")
 endif ()
 
+message(STATUS "Checkout branch main")
+vcpkg_execute_required_process(
+        COMMAND ${GIT} checkout main
+        WORKING_DIRECTORY ${SOURCE_PATH}
+        LOGNAME checkout
+)
+message(STATUS "Checkout branch done")
+
+message(STATUS "Fetch updates")
+vcpkg_execute_required_process(
+        COMMAND ${GIT} fetch
+        WORKING_DIRECTORY ${SOURCE_PATH}
+        LOGNAME checkout
+)
+message(STATUS "Fetch updates done")
+
 message(STATUS "Checkout revision ${GIT_REV}")
 vcpkg_execute_required_process(
         COMMAND ${GIT} checkout ${GIT_REV}
