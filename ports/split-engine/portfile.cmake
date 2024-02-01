@@ -1,12 +1,30 @@
 vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
-vcpkg_from_github(
-        OUT_SOURCE_PATH SOURCE_PATH
-        REPO xWinuX/SplitEngine
-        REF ab2a2ed7eb077ab8a7db429e1bc0d974ef038a2f
-        SHA512 90b98dac37a7e56c407234ddf8b93be7a4d15f64cd89d05cf3fa86dc829feb12bb578085cc567ee4d0763159ceaee1208cf3da887cb69efe932b824afb645f09
-        HEAD_REF main
-)
+include(vcpkg_common_functions)
+find_program(GIT git)
+
+set(GIT_URL "https://github.com/xWinuX/SplitEngine.git")
+set(GIT_REV "ab2a2ed7eb077ab8a7db429e1bc0d974ef038a2f")
+
+if (NOT EXISTS "${DOWNLOADS}/SplitEngine.git")
+    message(STATUS "Cloning")
+    vcpkg_execute_required_process(
+            COMMAND ${GIT} clone submodule update --init ${GIT_URL} ${DOWNLOADS}/SplitEngine.git
+            WORKING_DIRECTORY ${DOWNLOADS}
+            LOGNAME clone
+    )
+endif ()
+message(STATUS "Cloning done")
+
+if (NOT EXISTS "${CURRENT_BUILDTREES_DIR}/src/.git")
+    message(STATUS "Adding worktree")
+    vcpkg_execute_required_process(
+            COMMAND ${GIT} worktree add -f --detach ${CURRENT_BUILDTREES_DIR}/src ${GIT_REV}
+            WORKING_DIRECTORY ${DOWNLOADS}/SplitEngine.git
+            LOGNAME worktree
+    )
+endif ()
+message(STATUS "Adding worktree done")
 
 vcpkg_configure_cmake(
         SOURCE_PATH ${SOURCE_PATH}
