@@ -6,6 +6,8 @@ find_program(GIT git)
 set(GIT_URL "https://github.com/xWinuX/SplitEngine.git")
 set(GIT_REV "ab2a2ed7eb077ab8a7db429e1bc0d974ef038a2f")
 
+set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src)
+
 if (NOT EXISTS "${DOWNLOADS}/SplitEngine.git")
     message(STATUS "Cloning")
     vcpkg_execute_required_process(
