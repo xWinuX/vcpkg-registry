@@ -17,14 +17,14 @@ endif ()
 message(STATUS "Cloning done")
 
 if (NOT EXISTS "${CURRENT_BUILDTREES_DIR}/src/.git")
-    message(STATUS "Adding worktree")
+    message(STATUS "Checkout revision ${GIT_REV}")
     vcpkg_execute_required_process(
-            COMMAND ${GIT} worktree add -f --detach ${CURRENT_BUILDTREES_DIR}/src ${GIT_REV}
+            COMMAND ${GIT} checkout ${GIT_REV}
             WORKING_DIRECTORY ${DOWNLOADS}/SplitEngine.git
-            LOGNAME worktree
+            LOGNAME checkout
     )
 endif ()
-message(STATUS "Adding worktree done")
+message(STATUS "Checkout revision done")
 
 vcpkg_configure_cmake(
         SOURCE_PATH ${SOURCE_PATH}
