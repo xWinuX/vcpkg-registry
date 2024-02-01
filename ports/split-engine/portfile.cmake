@@ -3,7 +3,7 @@ vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 vcpkg_from_github(
         OUT_SOURCE_PATH SOURCE_PATH
         REPO xWinuX/SplitEngine
-        REF 4707bdb3b60af805b83682e4f79ed3230752bfc9
+        REF 62ac5fff9d98fbc4d0c2e2bf88f9cd215bbaca70
         SHA512 3af10832bb930a2294d07e7b4aec90d08170db930643051da27f8254337de0f64253832f3a39ffff844c47857df0a6785978bc0dff445088fa24540b88defc42
         HEAD_REF main
 )
