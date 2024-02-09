@@ -4,7 +4,7 @@ include(vcpkg_common_functions)
 find_program(GIT git)
 
 set(GIT_URL "https://github.com/xWinuX/SplitEngine.git")
-set(GIT_REV "e8ca1a4063d45958543231a5768c170e7d388051")
+set(GIT_REV "76eaee59f42d566f0c815b8e69e05eaaa394a6d3")
 
 set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/${PORT})
 
